@@ -5,7 +5,7 @@ var fs = require('fs');
 router.get('/', function (req, res, next) {
 
     let obj;
-    fs.readFile('routes/my.json', 'utf8', function (err, data) {
+    fs.readFile('routes/carOwners.json', 'utf8', function (err, data) {
         if (err) throw err;
         obj = JSON.parse(data);
         try {

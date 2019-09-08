@@ -4,7 +4,7 @@ var fs = require('fs');
 
 router.post('/', function (req, res, next) {
 
-    fs.readFile('routes/my.json', 'utf8', function (err, data) {
+    fs.readFile('routes/carOwners.json', 'utf8', function (err, data) {
         let json = JSON.parse(data);
 
         json.forEach((entry, i) => {
@@ -14,7 +14,7 @@ router.post('/', function (req, res, next) {
             }
         });
 
-        fs.writeFile('routes/my.json', JSON.stringify(json), (err) => {
+        fs.writeFile('routes/carOwners.json', JSON.stringify(json), (err) => {
             if (err) throw err;
             res.status(200).send({message: 'Edit ok'})
         });
